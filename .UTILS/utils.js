@@ -112,7 +112,5 @@ export function get_number_in_range(mensagem, min, max){
     return numero
   }
 
-export function calcular_porcentagem(parte, total){
-    return (parte/total *100)
-}
+
   

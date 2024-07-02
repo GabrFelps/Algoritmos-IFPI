@@ -327,3 +327,7 @@ export function retornar_data_mais_recente (dia1, dia2, mes1, mes2, ano1, ano2){
         print (`As Datas são Iguais | ${dia1}/${mes1}/${ano1}`)
     }
 }
+
+export function calcular_porcentagem(parte, total){
+    return (parte/total *100)
+}
