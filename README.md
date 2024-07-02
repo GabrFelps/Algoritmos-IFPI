@@ -12,3 +12,7 @@ Repositório destinado às atividades opcionais ou obrigatórias da disciplina d
 <a href="https://docs.godotengine.org/pt-br/4.x/tutorials/scripting/gdscript/gdscript_basics.html" target="_blank" rel="noreferrer"><img src="https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000" width="45" height="45"/></a>
 <a href="https://docs.godotengine.org/pt-br/4.x/tutorials/scripting/gdscript/gdscript_basics.html" target="_blank" rel="noreferrer"><img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" width="45" height="45"/></a>
 </p>
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/74038190/212750672-2f3f2b50-c84f-4ed8-a60a-849ae69ff9df.gif" width="680" height="400">
+</p>
