@@ -21,9 +21,8 @@ percentual investido em cashback pela loja; Maior, menor e
 valor médio pago em cashback.
 '''
 
-def main ():
+def computarFaturamento (numeroDeCompras):
     count = 0;
-    numeroDeCompras = int(input("Qual a quantidade de vendas?: "));
     menorValor = 223456786756453454657;
     maiorValor = 0;
     totalCashback = 0;
@@ -52,8 +51,10 @@ def main ():
             menorValor = valorDaCompra;
         
         count+=1;
-    
+    return totalCompras, totalCashback, maiorValor, menorValor, numeroDeCompras
 
+
+def retornarSituacaoDoFaturamento(totalCompras, totalCashback, maiorValor, menorValor, numeroDeCompras):
     print("-" * 55);
     print(f'''
         Faturamento Total: R${totalCompras:.2f}
@@ -64,7 +65,10 @@ def main ():
         Valor médio pago em Cashback: R${(totalCashback / numeroDeCompras):.2f}
         ''');
     print("-" * 55);
-       
+
+def main ():
+    numeroDeCompras = int(input("Qual a quantidade de vendas?: "));
+    totalCompras, totalCashback, maiorValor, menorValor, numeroDeCompras = computarFaturamento(numeroDeCompras)
+    retornarSituacaoDoFaturamento(totalCompras, totalCashback, maiorValor, menorValor, numeroDeCompras)
+    
 main()
-
-
