@@ -1,3 +1,4 @@
+import os
 '''
 Uma loja presenteia suas clientes com descontos
 (cashback) progressivos de acordo com suas compras. Desta
@@ -20,6 +21,11 @@ Quanto foi distribuído em cashback; Qual o valor em reais e
 percentual investido em cashback pela loja; Maior, menor e
 valor médio pago em cashback.
 '''
+def clear_screen():
+    if os.name == 'nt':
+        os.system('cls');
+    else:
+        os.system('clear');
 
 def computarFaturamento (numeroDeCompras):
     count = 0;
@@ -67,6 +73,7 @@ def retornarSituacaoDoFaturamento(totalCompras, totalCashback, maiorValor, menor
     print("-" * 55);
 
 def main ():
+    clear_screen()
     numeroDeCompras = int(input("Qual a quantidade de vendas?: "));
     totalCompras, totalCashback, maiorValor, menorValor, numeroDeCompras = computarFaturamento(numeroDeCompras)
     retornarSituacaoDoFaturamento(totalCompras, totalCashback, maiorValor, menorValor, numeroDeCompras)
