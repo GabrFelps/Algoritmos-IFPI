@@ -1,3 +1,4 @@
+import os
 '''
 Uma loja presenteia suas clientes com descontos
 (cashback) progressivos de acordo com suas compras. Desta
