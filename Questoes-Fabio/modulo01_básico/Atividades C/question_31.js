@@ -4,6 +4,7 @@ import { question } from "readline-sync"
 function main(){
   console.log('******* Bin to Dec ********')
   const binario = Number(question('Binário(4 digitos): '))
+  console.log(binario)
 
   const decimal = converter_decimal(binario)
 
