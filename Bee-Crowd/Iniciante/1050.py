@@ -1,21 +1,17 @@
 def main():
+    dicionario = {
+        11: "São Paulo", 
+        19: "Campinas", 
+        21: "Rio de Janeiro", 
+        27: "Vitoria", 
+        31: "Belo Horizonte",
+        32: "Juiz de Fora", 
+        61: "Brasília", 
+        71: "Salvador"
+        }
     n = int(input())
-    if n == 61:
-        print("Brasília")
-    elif n == 71:
-        print("Salvador")
-    elif n == 11:
-        print("São Paulo")
-    elif n == 21:
-        print("Rio de Janeiro")
-    elif n == 32:
-        print("Juiz de Fora")
-    elif n == 19:
-        print("Campinas")
-    elif n == 27:
-        print("Vitoria")
-    elif n == 31:
-        print("Belo Horizonte")
+    if n in dicionario.keys():
+        print(dicionario[n])
     else:
         print("DDD nao cadastrado")
 main()
