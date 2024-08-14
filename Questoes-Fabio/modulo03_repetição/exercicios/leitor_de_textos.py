@@ -21,61 +21,16 @@ def main():
 
     while menu_option != "5":
         if menu_option == "1":
-            menu_arquivos = '''
-            Arquivos disponíveis:
-            > words.txt
-            ---------------------
-            '''
-            print(menu_arquivos)
-            nome_arquivo = input("Qual arquivo você quer carregar?: ")
-
-            while nome_arquivo != "words.txt":
-                clear_screen()
-                print("Arquivo indisponível para leitura, tente novamente!")
-                print()
-                print(menu_arquivos)
-                print()
-                nome_arquivo = input("Qual arquivo você quer carregar?: ")
-
-            arquivo_carregado = True
-            clear_screen()
-            print("Arquivo carregado com sucesso!")
-            time.sleep(2)
+            arquivo_carregado, nome_arquivo = load_file() 
             
-
         elif menu_option == "2" and arquivo_carregado:
-            clear_screen()
-            print("Palavras com mais de 20 letras:")
-            with open(nome_arquivo) as arquivo_de_entrada:
-                for linha in arquivo_de_entrada:
-                    word = linha.strip()
-                    if len(word) > 20:
-                        print(word)
-            time.sleep(2)
+            words_more_than_20_ch(nome_arquivo)
             
-
         elif menu_option == "3" and arquivo_carregado:
-            clear_screen()
-            print("Palavras sem a letra 'e':")
-            with open(nome_arquivo) as arquivo_de_entrada:
-                for linha in arquivo_de_entrada:
-                    word = linha.strip()
-                    if "e" not in word:
-                        print(word)
-            time.sleep(2)
+            words_without_ltr_E(nome_arquivo)
         
-
         elif menu_option == "4" and arquivo_carregado:
-            n_palavra = int(input("Qual a quantidade de caracteres mínimos que você deseja ver nas palavras: "))
-            clear_screen()
-            print(f"Palavras com mais de {n_palavra} letras:")
-            with open(nome_arquivo) as arquivo_de_entrada:
-                for linha in arquivo_de_entrada:
-                    word = linha.strip()
-                    if len(word) > n_palavra:
-                        print(word)
-            time.sleep(2)
-            
+            words_more_than_whished_ch(nome_arquivo)
 
         else:
             if not arquivo_carregado:
@@ -84,12 +39,67 @@ def main():
                 print("Opção inválida. Tente novamente.")
             time.sleep(2)
             
-
         print(menu)
         menu_option = input("Escolha uma opção do menu: ")
         
     clear_screen()
     print("Encerrando programa...")
+    time.sleep(2)
+
+def load_file():
+    menu_arquivos = '''
+    Arquivos disponíveis:
+    > words.txt
+    ---------------------
+    '''
+    print(menu_arquivos)
+    nome_arquivo = input("Qual arquivo você quer carregar?: ")
+
+    while nome_arquivo != "words.txt":
+        clear_screen()
+        print("Arquivo indisponível para leitura, tente novamente!")
+        print()
+        print(menu_arquivos)
+        print()
+        nome_arquivo = input("Qual arquivo você quer carregar?: ")
+
+    arquivo_carregado = True
+    clear_screen()
+    print("Arquivo carregado com sucesso!")
+    time.sleep(2)
+    return arquivo_carregado, nome_arquivo
+
+
+def words_more_than_20_ch(nome_arquivo):
+    clear_screen()
+    print("Palavras com mais de 20 letras:")
+    with open(nome_arquivo) as arquivo_de_entrada:
+        for linha in arquivo_de_entrada:
+            word = linha.strip()
+            if len(word) > 20:
+                print(word)
+    time.sleep(2)
+
+
+def words_without_ltr_E(nome_arquivo):
+    print("Palavras sem a letra 'e':")
+    with open(nome_arquivo) as arquivo_de_entrada:
+        for linha in arquivo_de_entrada:
+            word = linha.strip()
+            if "e" not in word:
+                print(word)
+    time.sleep(2)
+
+def words_more_than_whished_ch(nome_arquivo):
+    n_palavra = int(input("Qual a quantidade de caracteres mínimos que você deseja ver nas palavras: "))
+    clear_screen()
+    print(f"Palavras com mais de {n_palavra} letras:")
+    with open(nome_arquivo) as arquivo_de_entrada:
+        for linha in arquivo_de_entrada:
+            word = linha.strip()
+            333
+            if len(word) > n_palavra:
+                print(word)
     time.sleep(2)
 
 def clear_screen():
