@@ -21,10 +21,15 @@ def main():
 
     while menu_option != "5":
         if menu_option == "1":
-            arquivo_carregado, nome_arquivo = load_file() 
+            arquivo_carregado, nome_arquivo = load_file()
             
         elif menu_option == "2" and arquivo_carregado:
             words_more_than_20_ch(nome_arquivo)
+            if continuar():
+                pass
+            else:
+                break;
+            
             
         elif menu_option == "3" and arquivo_carregado:
             words_without_ltr_E(nome_arquivo)
@@ -76,8 +81,8 @@ def words_more_than_20_ch(nome_arquivo):
     with open(nome_arquivo) as arquivo_de_entrada:
         for linha in arquivo_de_entrada:
             word = linha.strip()
-            if len(word) > 20:
-                print(word)
+            if len(word) >= 20:
+                print(f"{len(word)} letras >", word)
     time.sleep(2)
 
 
@@ -101,6 +106,18 @@ def words_more_than_whished_ch(nome_arquivo):
             if len(word) > n_palavra:
                 print(word)
     time.sleep(2)
+
+def continuar():
+    clear_screen();
+    texto = '''
+    Deseja continuar? (s/n):
+    > '''
+    continua = input(texto)
+    if continua == "s":
+        return True
+    
+
+
 
 def clear_screen():
     if os.name == 'nt':
