@@ -37,7 +37,7 @@ export function getstring(msg){
 }
 
 export function get_random_number(min, max){
-    return Math.floor(Math.random() * (max - min)) + min
+    return Math.floor(Math.random() * (max + 1 - min)) + min
 } 
 
 export function decimal_to_romano(decimal){
